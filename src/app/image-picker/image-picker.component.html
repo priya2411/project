@@ -1,0 +1,13 @@
+
+<div id="container" ngFileDropzone (fileDrop)="image = $event.dataURL">
+   <div *ngIf="!image" id="content">
+    Drop an image here..
+  </div> 
+   <img id="image-content" *ngIf="image" [src]="image">
+</div>
+<br>
+
+<button type="button" ngFilePicker (filePick)="image = $event.dataURL">File browser</button>
+<button type="button" (click)="saveToLocal()">Save to local storage</button>
+<button type="button" (click)="retrieveFromLocal()">Retrieve from local storage</button>
+<button type="button" (click)="clearLocal()">Clear Local</button>
